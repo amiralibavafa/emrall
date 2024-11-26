@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <title>Sign Up</title>
+    <style>
+        body{
+            background-color: #C7C8CC;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div>
+            <h2 style="text-align: center;">Sign Up</h2>
+            <form action="/new-user-sign-up" method="post" class="form-group" onsubmit="return checkPasswords()">
+                <input class="form-control m-1" type="text" name="fName" placeholder="First Name" required>
+                <input class="form-control m-1"  type="text" name="lName" placeholder="Last Name" required>
+                <input class="form-control m-1"  type="tel" name="mobile" placeholder="Phone" required>
+                <input class="form-control m-1"  type="username" name="username" placeholder="Username" required pattern="^\S+$">
+                <input class="form-control m-1"  id="password" type="password" name="password" placeholder="Password" required>
+                <input class="form-control m-1"  id="confirmpass" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                <input class="btn btn-info m-1" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checkPasswords() {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmpass").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false; // Prevents form from submitting
+            }
+            return true; // Allows form to submit if passwords match
+        }
+
+    </script>
+    <% if (!isUsernameValid) { %>
+        <script>
+            alert("Username already exists");
+        </script>
+    <% } %>
+</body>
+</html>
