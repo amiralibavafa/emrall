@@ -25,6 +25,7 @@
 
 ## Try The Software!
 [Try the software here](https://emrall.onrender.com/)
+The Username and Password for admin login is Username: admin | password: admin
 
 ## How It Works
 
